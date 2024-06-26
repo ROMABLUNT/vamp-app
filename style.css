@@ -6,6 +6,42 @@ body {
     margin: 0;
 
 }
+
+
+@media (max-height: 850px) {
+    .vamp-img {
+        height: 350px;
+        width: 200px;
+    }
+    .hero {
+        margin-top: 3em !important;
+    }
+    .play-menu {
+        margin-top: 3em !important;
+    }
+    .main-menu {
+        margin-top: 3em !important;
+    }
+}
+
+@media (max-height: 740px) {
+    .vamp-img {
+        height: 300px;
+        width: 180px;
+    }
+    .hero {
+        margin-top: 1.8em !important;
+    }
+    .play-menu {
+        margin-top: 0.8em !important;
+    }
+    .main-menu {
+        margin-top: 1.8em !important;
+    }
+}
+
+
+
 @font-face {
     font-family: "montserrat";
     src: url(fonts/monserrat.ttf);
@@ -31,4 +67,76 @@ p {
 }
 .header-nickname {
     font-size: 24px;
+}
+.hero {
+    margin-top: 2em;
+    text-align: center;
+}
+.play-menu {
+    margin-top: 4em;
+}
+.play-rectangle {
+    background-color: rgb(68, 68, 68);
+    width: 340px;
+    height: 128px;
+    margin: auto;
+    border-radius: 25px;
+}
+.squares {
+    padding-top: 1.5em;
+    display: flex;
+    justify-content: space-around;
+}
+.main-menu {
+    margin-top: 4em;
+}
+.main-rectangle {
+    background-color: rgb(255, 0, 0);
+    width: 250px;
+    height: 75px;
+    margin: auto;
+    border-radius: 25px;
+}
+.play-square-1 {
+    background-color: black;
+    width: 80px;
+    height: 80px;
+    border-radius: 25px;
+    opacity: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.main-squares {
+    padding-top: 1em;
+    display: flex;
+    justify-content: space-around;
+}
+.main-square-1 {
+    background-color: black;
+    width: 40px;
+    height: 40px;
+    border-radius: 15px;
+    opacity: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.tasks {
+
+}
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-30px);
+    }
+    60% {
+        transform: translateY(-15px);
+    }
+}
+
+.vamp-img.animate {
+    animation: bounce 1s;
 }

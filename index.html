@@ -7,15 +7,49 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <script src="script.js"></script>
     <div class="main-div">
         <div class="header">
             <p class="header-nickname">nickname</p>
             <figure class="figure-money">
                 <img src="images/BloodTokenBlack.png" width="40px">
-                <p class="header-money">5000</p>
+                <p id="token-count" class="header-money">0</p>
             </figure>
         </div>
-        
+        <div class="hero" id="hero">
+            <img class="vamp-img" src="images/vamp.png" height="377px" width="220px">
+        </div>
+        <div class="play-menu">
+            <div class="play-rectangle">
+                <div class="squares">
+                    <div class="play-square-1" onclick="playX()">
+                        <img class="tasks" src="images/Tasks.png" width="60px">    
+                    </div>
+                    <div class="play-square-1" onclick="playY()">
+                        <img class="tasks" src="images/Tasks.png" width="60px">
+                    </div>
+                    <div class="play-square-1" onclick="playZ()">
+                        <img class="tasks" src="images/Tasks.png" width="60px">
+                    </div>  
+                </div>
+            </div>
+        </div>
+        <div class="main-menu">
+            <div class="main-rectangle">
+                <div class="main-squares">
+                    <div class="main-square-1">
+                        <img class="tasks" src="images/Tasks.png" width="30px">                     
+                    </div>
+                    <div class="main-square-1">
+                        <img class="tasks" src="images/Tasks.png" width="30px">   
+                    </div>
+                    <div class="main-square-1">
+                        <img class="tasks" src="images/Tasks.png" width="30px">   
+                    </div>  
+                </div>
+            </div>
+        </div>
     </div>
+
 </body>
 </html>
