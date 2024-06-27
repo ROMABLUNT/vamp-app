@@ -15,6 +15,7 @@
             <figure class="figure-money">
                 <img src="images/BloodTokenBlack.png" width="40px">
                 <p id="token-count" class="header-money">0</p>
+                <button class="clear-button" onclick="clearLocalStorage()">Clear Local Storage</button>
             </figure>
         </div>
         <div class="hero" id="hero">
@@ -23,13 +24,16 @@
         <div class="play-menu">
             <div class="play-rectangle">
                 <div class="squares">
-                    <div class="play-square-1" onclick="playX()">
+                    <div class="play-square-1" id="play-button-x" onclick="playX()">
+                        <p id="play-button-x-hours"></p>
                         <img class="tasks" src="images/Tasks.png" width="60px">    
                     </div>
-                    <div class="play-square-1" onclick="playY()">
+                    <div class="play-square-1" id="play-button-y" onclick="playY()">
+                        <p id="play-button-y-hours"></p>
                         <img class="tasks" src="images/Tasks.png" width="60px">
                     </div>
-                    <div class="play-square-1" onclick="playZ()">
+                    <div class="play-square-1" id="play-button-z" onclick="playZ()">
+                        <p id="play-button-z-hours"></p>
                         <img class="tasks" src="images/Tasks.png" width="60px">
                     </div>  
                 </div>

@@ -102,7 +102,7 @@ p {
     width: 80px;
     height: 80px;
     border-radius: 25px;
-    opacity: 40%;
+    opacity: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -139,4 +139,33 @@ p {
 
 .vamp-img.animate {
     animation: bounce 1s;
+}
+
+.disabled {
+    pointer-events: none;
+    opacity: 0.5;
+}
+.play-square-1 img {
+    transition: opacity 0.3s ease;
+}
+.play-square-1.disabled img {
+    opacity: 0.5;
+}
+.play-square-1 {
+    position: relative;
+
+}
+.play-square-1 p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    padding: 0;
+    color: white;
+    font-weight: bold;
+    display: none;
+}
+.play-square-1.disabled p {
+    display: block;
 }
