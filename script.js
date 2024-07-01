@@ -95,3 +95,15 @@ function clearLocalStorage() {
     tokenCount = 0;
     document.getElementById('token-count').textContent = tokenCount;
 }
+
+const tg = window.Telegram.WebApp;
+tg.ready();
+tg.expand();
+
+function expandApp() {
+    tg.expand();
+}
+
+function closeApp() {
+    tg.close();
+}
