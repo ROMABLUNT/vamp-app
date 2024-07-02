@@ -110,7 +110,6 @@ function closeApp() {
 
 
 const user = tg.initDataUnsafe.user;
-alert(user)
 // Функция загрузки прогресса
 function loadProgress() {
     fetch(`/load_progress?user_id=${user.id}`)
