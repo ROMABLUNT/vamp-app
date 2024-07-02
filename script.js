@@ -107,3 +107,23 @@ function expandApp() {
 function closeApp() {
     tg.close();
 }
+
+
+const user = tg.initDataUnsafe.user;
+alert(user)
+// Функция загрузки прогресса
+function loadProgress() {
+    fetch(`/load_progress?user_id=${user.id}`)
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                tokenCount = data.tokens;
+                document.getElementById("token-count").innerText = `Tokens: ${tokenCount}`;
+            } else {
+                alert("Error loading progress.");
+            }
+        });
+}
+
+// Загрузка прогресса при запуске
+loadProgress();
