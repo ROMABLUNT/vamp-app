@@ -4,9 +4,7 @@
 }
 body {
     margin: 0;
-
 }
-
 
 @media (max-height: 850px) {
     .vamp-img {
@@ -153,7 +151,6 @@ p {
 }
 .play-square-1 {
     position: relative;
-
 }
 .play-square-1 p {
     position: absolute;

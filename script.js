@@ -1,3 +1,5 @@
+let tokenCount = 0;
+
 document.addEventListener("DOMContentLoaded", function() {
     function adjustHeight() {
         // Определяем высоту устройства
@@ -16,9 +18,6 @@ document.addEventListener("DOMContentLoaded", function() {
     // Настраиваем высоту при изменении размера окна
     window.addEventListener('resize', adjustHeight);
 });
-
-
-let tokenCount = 0;
 
 function playX() {
     handlePlay('lastPlayedTimeX', 8, 'play-button-x-hours');
