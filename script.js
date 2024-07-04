@@ -106,8 +106,7 @@ function expandApp() {
 function closeApp() {
     tg.close();
 }
-
-
+// я больше не могу
 const user = tg.initDataUnsafe.user;
 // Функция загрузки прогресса
 function loadProgress() {
