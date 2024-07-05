@@ -8,10 +8,12 @@
 }
 body {
     margin: 0;
-
 }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> f01bba769207056d50f25c4663f1ff28787988d9
 @media (max-height: 850px) {
     .vamp-img {
         height: 350px;
@@ -157,7 +159,10 @@ p {
 }
 .play-square-1 {
     position: relative;
+<<<<<<< HEAD
 
+=======
+>>>>>>> f01bba769207056d50f25c4663f1ff28787988d9
 }
 .play-square-1 p {
     position: absolute;

@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+=======
+let tokenCount = 0;
+
+>>>>>>> f01bba769207056d50f25c4663f1ff28787988d9
 document.addEventListener("DOMContentLoaded", function() {
     function adjustHeight() {
         // Определяем высоту устройства
@@ -17,9 +22,12 @@ document.addEventListener("DOMContentLoaded", function() {
     window.addEventListener('resize', adjustHeight);
 });
 
+<<<<<<< HEAD
 
 let tokenCount = 0;
 
+=======
+>>>>>>> f01bba769207056d50f25c4663f1ff28787988d9
 function playX() {
     handlePlay('lastPlayedTimeX', 8, 'play-button-x-hours');
 }
@@ -94,4 +102,38 @@ function clearLocalStorage() {
     updateButtonState();
     tokenCount = 0;
     document.getElementById('token-count').textContent = tokenCount;
+<<<<<<< HEAD
 }
+=======
+}
+
+const tg = window.Telegram.WebApp;
+tg.ready();
+tg.expand();
+
+function expandApp() {
+    tg.expand();
+}
+
+function closeApp() {
+    tg.close();
+}
+// я больше не могу
+const user = tg.initDataUnsafe.user;
+// Функция загрузки прогресса
+function loadProgress() {
+    fetch(`/load_progress?user_id=${user.id}`)
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                tokenCount = data.tokens;
+                document.getElementById("token-count").innerText = `Tokens: ${tokenCount}`;
+            } else {
+                alert("Error loading progress.");
+            }
+        });
+}
+
+// Загрузка прогресса при запуске
+loadProgress();
+>>>>>>> f01bba769207056d50f25c4663f1ff28787988d9

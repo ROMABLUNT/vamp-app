@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -57,4 +58,66 @@
     </div>
 
 </body>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>$VAMP GAME</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="images/BloodTokenBlack.png">
+</head>
+<body>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script src="script.js"></script>
+    <div class="main-div">
+        <div class="header">
+            <p class="header-nickname">nickname</p>
+            <figure class="figure-money">
+                <img src="images/BloodTokenBlack.png" width="40px">
+                <p id="token-count" class="header-money">0</p>
+                <button class="clear-button" onclick="clearLocalStorage()">Clear Local Storage</button>
+            </figure>
+        </div>
+        <div class="hero" id="hero">
+            <img class="vamp-img" src="images/vamp.png" height="377px" width="220px">
+        </div>
+        <div class="play-menu">
+            <div class="play-rectangle">
+                <div class="squares">
+                    <div class="play-square-1" id="play-button-x" onclick="playX()">
+                        <p id="play-button-x-hours"></p>
+                        <img class="tasks" src="images/Tasks.png" width="60px">    
+                    </div>
+                    <div class="play-square-1" id="play-button-y" onclick="playY()">
+                        <p id="play-button-y-hours"></p>
+                        <img class="tasks" src="images/Tasks.png" width="60px">
+                    </div>
+                    <div class="play-square-1" id="play-button-z" onclick="playZ()">
+                        <p id="play-button-z-hours"></p>
+                        <img class="tasks" src="images/Tasks.png" width="60px">
+                    </div>  
+                </div>
+            </div>
+        </div>
+        <div class="main-menu">
+            <div class="main-rectangle">
+                <div class="main-squares">
+                    <div class="main-square-1">
+                        <img class="tasks" src="images/Tasks.png" width="30px">                     
+                    </div>
+                    <div class="main-square-1">
+                        <img class="tasks" src="images/Tasks.png" width="30px">   
+                    </div>
+                    <div class="main-square-1">
+                        <img class="tasks" src="images/Tasks.png" width="30px">   
+                    </div>  
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+>>>>>>> f01bba769207056d50f25c4663f1ff28787988d9
 </html>
