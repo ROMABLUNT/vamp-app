@@ -1,97 +1,111 @@
-document.addEventListener("DOMContentLoaded", function() {
-    function adjustHeight() {
-        // Определяем высоту устройства
-        const deviceHeight = window.innerHeight;
-        
-        // Находим элемент с классом .main-div
-        const mainDiv = document.querySelector('.main-div');
-        
-        // Устанавливаем высоту элемента
-        mainDiv.style.height = deviceHeight + 'px';
-    }
+// Переменные для хранения данных
+let tokenCount = 0;  // Общее количество монет
+const tokenDisplay = document.getElementById('token-count');  // Элемент для отображения монет
 
-    // Настраиваем высоту при загрузке страницы
-    adjustHeight();
+// Функция для обновления отображаемого количества монет
+function updateTokenDisplay() {
+    tokenDisplay.textContent = tokenCount;
+}
 
-    // Настраиваем высоту при изменении размера окна
-    window.addEventListener('resize', adjustHeight);
-});
+// Анимация прыжка (bounce) для вампира
+function animateVamp() {
+    const vampImg = document.querySelector('.vamp-img');
+    vampImg.classList.add('animate');
+    setTimeout(() => vampImg.classList.remove('animate'), 1000);
+}
 
-
-let tokenCount = 0;
-
+// Функция клика по кнопке X
 function playX() {
-    handlePlay('lastPlayedTimeX', 8, 'play-button-x-hours');
+    if (!document.getElementById('play-button-x').classList.contains('disabled')) {
+        tokenCount += 1;  // Добавляем 1 монету
+        updateTokenDisplay();  // Обновляем отображение монет
+        animateVamp();  // Анимация вампира
+        disableButton('play-button-x', 3000);  // Блокируем кнопку на 3 секунды
+    }
 }
 
+// Функция клика по кнопке Y
 function playY() {
-    handlePlay('lastPlayedTimeY', 6, 'play-button-y-hours');
+    if (!document.getElementById('play-button-y').classList.contains('disabled')) {
+        tokenCount += 5;  // Добавляем 5 монет
+        updateTokenDisplay();  // Обновляем отображение монет
+        animateVamp();  // Анимация вампира
+        disableButton('play-button-y', 5000);  // Блокируем кнопку на 5 секунд
+    }
 }
 
+// Функция клика по кнопке Z
 function playZ() {
-    handlePlay('lastPlayedTimeZ', 4, 'play-button-z-hours');
-}
-
-function handlePlay(storageKey, hoursCooldown, hoursElementId) {
-    const currentTime = Date.now();
-    const lastPlayed = localStorage.getItem(storageKey);
-    
-    if (lastPlayed && currentTime - lastPlayed < hoursCooldown * 60 * 60 * 1000) {
-        // Если прошло меньше указанного времени, ничего не делаем
-        return;
-    }
-
-    // Обновляем время последнего нажатия
-    localStorage.setItem(storageKey, currentTime);
-
-    // Найти элемент героя
-    const hero = document.getElementById('hero').querySelector('.vamp-img');
-    // Добавить класс для анимации
-    hero.classList.add('animate');
-
-    // Удалить класс после окончания анимации
-    hero.addEventListener('animationend', () => {
-        hero.classList.remove('animate');
-    }, { once: true });
-
-    // Увеличить количество токенов
-    tokenCount += 150; // например, за каждое нажатие добавляется 150 токенов
-    document.getElementById('token-count').textContent = tokenCount;
-
-    // Обновить состояние кнопок
-    updateButtonState();
-}
-
-function updateButtonState() {
-    updateButtonStateForKey('play-button-x', 'lastPlayedTimeX', 8, 'play-button-x-hours');
-    updateButtonStateForKey('play-button-y', 'lastPlayedTimeY', 6, 'play-button-y-hours');
-    updateButtonStateForKey('play-button-z', 'lastPlayedTimeZ', 4, 'play-button-z-hours');
-}
-
-function updateButtonStateForKey(buttonId, storageKey, hoursCooldown, hoursElementId) {
-    const playButton = document.getElementById(buttonId);
-    const hoursElement = document.getElementById(hoursElementId);
-    const lastPlayed = localStorage.getItem(storageKey);
-    const currentTime = Date.now();
-
-    if (lastPlayed && currentTime - lastPlayed < hoursCooldown * 60 * 60 * 1000) {
-        const remainingTime = (hoursCooldown * 60 * 60 * 1000 - (currentTime - lastPlayed)) / (60 * 60 * 1000);
-        playButton.classList.add('disabled');
-        playButton.disabled = true;
-        hoursElement.textContent = `${remainingTime.toFixed(2)} hours`;
-    } else {
-        playButton.classList.remove('disabled');
-        playButton.disabled = false;
-        hoursElement.textContent = `Play ${buttonId.charAt(buttonId.length - 1).toUpperCase()}`;
+    if (!document.getElementById('play-button-z').classList.contains('disabled')) {
+        tokenCount += 10;  // Добавляем 10 монет
+        updateTokenDisplay();  // Обновляем отображение монет
+        animateVamp();  // Анимация вампира
+        disableButton('play-button-z', 8000);  // Блокируем кнопку на 8 секунд
     }
 }
 
-// Обновляем состояние кнопок при загрузке страницы
-document.addEventListener('DOMContentLoaded', updateButtonState);
+// Функция для блокировки кнопки на определённое время
+function disableButton(buttonId, timeout) {
+    const button = document.getElementById(buttonId);
+    button.classList.add('disabled');
 
+    let remainingTime = timeout / 1000; // Секунды
+    const timerText = button.querySelector('p');
+    timerText.style.display = 'block';
+    timerText.textContent = remainingTime;
+
+    const intervalId = setInterval(() => {
+        remainingTime -= 1;
+        timerText.textContent = remainingTime;
+
+        if (remainingTime <= 0) {
+            clearInterval(intervalId);
+            button.classList.remove('disabled');
+            timerText.style.display = 'none';
+        }
+    }, 1000);
+}
+
+// Очистка LocalStorage (для сброса прогресса)
 function clearLocalStorage() {
     localStorage.clear();
-    updateButtonState();
     tokenCount = 0;
-    document.getElementById('token-count').textContent = tokenCount;
+    updateTokenDisplay();
 }
+
+// Функции для управления секциями
+function showTasks() {
+    hideAllSections(); // Скрыть все секции
+    document.getElementById('tasks-section').style.display = 'block'; // Показать секцию задач
+}
+
+function showGame() {
+    hideAllSections(); // Скрыть все секции
+    document.getElementById('game-section').style.display = 'block'; // Показать игровую секцию
+}
+
+function showFriends() {
+    hideAllSections(); // Скрыть все секции
+    document.getElementById('friends-section').style.display = 'block'; // Показать секцию друзей
+}
+
+// Функция для скрытия всех секций
+function hideAllSections() {
+    document.getElementById('tasks-section').style.display = 'none';
+    document.getElementById('game-section').style.display = 'none';
+    document.getElementById('friends-section').style.display = 'none';
+}
+
+// Загружаем количество монет из LocalStorage, если они были сохранены
+window.onload = function() {
+    const savedTokens = localStorage.getItem('tokenCount');
+    if (savedTokens) {
+        tokenCount = parseInt(savedTokens);
+        updateTokenDisplay();
+    }
+};
+
+// Сохраняем количество монет в LocalStorage перед закрытием страницы
+window.onbeforeunload = function() {
+    localStorage.setItem('tokenCount', tokenCount);
+};

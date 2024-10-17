@@ -170,3 +170,37 @@ p {
 .play-square-1.disabled p {
     display: block;
 }
+
+/* Анимация кнопок при нажатии */
+.play-square-1:active {
+    transform: scale(0.95); /* Лёгкая анимация уменьшения кнопки при клике */
+}
+
+/* Добавление transition для плавности изменения состояния */
+.play-square-1 {
+    transition: transform 0.2s ease, opacity 0.3s ease;
+}
+
+.play-square-1.disabled {
+    pointer-events: none; /* Отключаем клики */
+    opacity: 0.5; /* Понижаем прозрачность, когда кнопка заблокирована */
+}
+
+/* Анимация прыжка для вампира (обновлено) */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-30px);
+    }
+    60% {
+        transform: translateY(-15px);
+    }
+}
+
+.tasks-section, .friends-section {
+    color: white;
+    text-align: center;
+    margin-top: 20px;
+}

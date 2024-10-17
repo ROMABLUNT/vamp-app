@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,53 +9,100 @@
 </head>
 <body>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
-    <script src="script.js"></script>
     <div class="main-div">
         <div class="header">
             <p class="header-nickname">nickname</p>
             <figure class="figure-money">
                 <img src="images/BloodTokenBlack.png" width="40px">
-                <p id="token-count" class="header-money">0</p>
+                <p id="token-count" class="header-money"></p>
                 <button class="clear-button" onclick="clearLocalStorage()">Clear Local Storage</button>
             </figure>
         </div>
-        <div class="hero" id="hero">
-            <img class="vamp-img" src="images/vamp.png" height="377px" width="220px">
-        </div>
-        <div class="play-menu">
-            <div class="play-rectangle">
-                <div class="squares">
-                    <div class="play-square-1" id="play-button-x" onclick="playX()">
-                        <p id="play-button-x-hours"></p>
-                        <img class="tasks" src="images/Tasks.png" width="60px">    
+        
+        <!-- Секции -->
+        <div id="tasks-section" style="display: none;">
+            <div class="main-menu">
+                <div class="main-rectangle">
+                    <div class="main-squares">
+                        <div class="main-square-1" onclick="showTasks()">
+                            <img class="tasks" src="images/Tasks.png" width="30px">  
+                        </div>
+                        <div class="main-square-1" onclick="showGame()">
+                            <img class="tasks" src="images/Tasks.png" width="30px">  
+                        </div>
+                        <div class="main-square-1" onclick="showFriends()">
+                            <img class="tasks" src="images/Tasks.png" width="30px">  
+                        </div>  
                     </div>
-                    <div class="play-square-1" id="play-button-y" onclick="playY()">
-                        <p id="play-button-y-hours"></p>
-                        <img class="tasks" src="images/Tasks.png" width="60px">
-                    </div>
-                    <div class="play-square-1" id="play-button-z" onclick="playZ()">
-                        <p id="play-button-z-hours"></p>
-                        <img class="tasks" src="images/Tasks.png" width="60px">
-                    </div>  
                 </div>
             </div>
+            <h2>Список заданий</h2>
+            <p>Здесь будет ваш список заданий.</p>
         </div>
-        <div class="main-menu">
-            <div class="main-rectangle">
-                <div class="main-squares">
-                    <div class="main-square-1">
-                        <img class="tasks" src="images/Tasks.png" width="30px">                     
+
+        <div id="game-section" style="display: block;">
+            <div class="hero" id="hero">
+                <img class="vamp-img" src="images/vamp.png" height="377px" width="220px">
+            </div>
+            
+            <div class="play-menu">
+                <div class="play-rectangle">
+                    <div class="squares">
+                        <div class="play-square-1" id="play-button-x" onclick="playX()">
+                            <p id="play-button-x-hours"></p>
+                            <img class="tasks" src="images/Tasks.png" width="60px">    
+                        </div>
+                        <div class="play-square-1" id="play-button-y" onclick="playY()">
+                            <p id="play-button-y-hours"></p>
+                            <img class="tasks" src="images/Tasks.png" width="60px">
+                        </div>
+                        <div class="play-square-1" id="play-button-z" onclick="playZ()">
+                            <p id="play-button-z-hours"></p>
+                            <img class="tasks" src="images/Tasks.png" width="60px">
+                        </div>  
                     </div>
-                    <div class="main-square-1">
-                        <img class="tasks" src="images/Tasks.png" width="30px">   
-                    </div>
-                    <div class="main-square-1">
-                        <img class="tasks" src="images/Tasks.png" width="30px">   
-                    </div>  
                 </div>
             </div>
+    
+            <div class="main-menu">
+                <div class="main-rectangle">
+                    <div class="main-squares">
+                        <div class="main-square-1" onclick="showTasks()">
+                            <img class="tasks" src="images/Tasks.png" width="30px">  
+                        </div>
+                        <div class="main-square-1" onclick="showGame()">
+                            <img class="tasks" src="images/Tasks.png" width="30px">  
+                        </div>
+                        <div class="main-square-1" onclick="showFriends()">
+                            <img class="tasks" src="images/Tasks.png" width="30px">  
+                        </div>  
+                    </div>
+                </div>
+            </div>
+    
+        </div>
+
+        <div id="friends-section" style="display: none;">
+            <div class="main-menu">
+                <div class="main-rectangle">
+                    <div class="main-squares">
+                        <div class="main-square-1" onclick="showTasks()">
+                            <img class="tasks" src="images/Tasks.png" width="30px">  
+                        </div>
+                        <div class="main-square-1" onclick="showGame()">
+                            <img class="tasks" src="images/Tasks.png" width="30px">  
+                        </div>
+                        <div class="main-square-1" onclick="showFriends()">
+                            <img class="tasks" src="images/Tasks.png" width="30px">  
+                        </div>  
+                    </div>
+                </div>
+            </div>
+            <h2>Друзья (рефералы)</h2>
+            <p>Здесь будет секция друзей и рефералов.</p>
         </div>
     </div>
-
+    
+    <script src="script.js"></script>
 </body>
 </html>
