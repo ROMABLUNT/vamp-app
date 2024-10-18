@@ -21,6 +21,38 @@
         
         <!-- Секции -->
         <div id="tasks-section" style="display: none;">
+
+            <h2>Список заданий</h2>
+
+            <table class="tasks-table">
+                <thead>
+                    <tr>
+                        <th>Task Name</th>
+                        <th>Reward</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Complete 5 clicks</td>
+                        <td>10 Tokens</td>
+                        <td><button onclick="checkTask('task1')">Check</button></td>
+                    </tr>
+                    <tr>
+                        <td>Invite a friend</td>
+                        <td>50 Tokens</td>
+                        <td><button onclick="checkTask('task2')">Check</button></td>
+                    </tr>
+                    <tr>
+                        <td>Play for 5 minutes</td>
+                        <td>30 Tokens</td>
+                        <td><button onclick="checkTask('task3')">Check</button></td>
+                    </tr>
+             </tbody>
+            </table>
+
+            <p id="task-message" class="task-message"></p>
+
             <div class="main-menu">
                 <div class="main-rectangle">
                     <div class="main-squares">
@@ -36,8 +68,7 @@
                     </div>
                 </div>
             </div>
-            <h2>Список заданий</h2>
-            <p>Здесь будет ваш список заданий.</p>
+
         </div>
 
         <div id="game-section" style="display: block;">
@@ -82,7 +113,35 @@
     
         </div>
 
-        <div id="friends-section" style="display: none;">
+        <div id="friends-section" class="section hidden">
+            <h2 class="friends-h2">Ваши друзья</h2>
+            <table class="friends-table">
+                <thead>
+                    <tr>
+                        <th>Имя друга</th>
+                        <th>Полученная награда</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Александр</td>
+                        <td>50 монет</td>
+                    </tr>
+                    <tr>
+                        <td>Мария</td>
+                        <td>30 монет</td>
+                    </tr>
+                    <tr>
+                        <td>Дмитрий</td>
+                        <td>70 монет</td>
+                    </tr>
+                </tbody>
+            </table>
+        
+            <div class="invite-friends">
+                <button class="invite-button" onclick="inviteFriends()">Пригласить друзей</button>
+            </div>
+
             <div class="main-menu">
                 <div class="main-rectangle">
                     <div class="main-squares">
@@ -98,8 +157,7 @@
                     </div>
                 </div>
             </div>
-            <h2>Друзья (рефералы)</h2>
-            <p>Здесь будет секция друзей и рефералов.</p>
+
         </div>
     </div>
     

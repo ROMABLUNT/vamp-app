@@ -21,9 +21,6 @@ body {
     .play-menu {
         margin-top: 3em !important;
     }
-    .main-menu {
-        margin-top: 3em !important;
-    }
 }
 
 @media (max-height: 740px) {
@@ -38,7 +35,7 @@ body {
         margin-top: 0.8em !important;
     }
     .main-menu {
-        margin-top: 1.8em !important;
+        margin-bottom: 1em !important;
     }
 }
 
@@ -90,7 +87,14 @@ p {
     justify-content: space-around;
 }
 .main-menu {
-    margin-top: 4em;
+    position: fixed;
+    bottom: 0; /* Закрепляем меню у нижнего края экрана */
+    width: 100%; /* Ширина меню на всю ширину экрана */
+    z-index: 1000; /* Чтобы меню всегда было поверх других элементов */
+    padding: 10px 0;
+    display: flex;
+    justify-content: center; /* Центрируем содержимое по горизонтали */
+    margin-bottom: 4em;
 }
 .main-rectangle {
     background-color: rgb(255, 0, 0);
@@ -203,4 +207,112 @@ p {
     color: white;
     text-align: center;
     margin-top: 20px;
+}
+/* Общие стили для секций */
+.section {
+    display: none; /* Скрыть секцию по умолчанию */
+    color: white;
+}
+
+/* Стили для таблицы заданий */
+.tasks-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background-color: #333;
+}
+
+.tasks-table th, .tasks-table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #444;
+    color: white;
+}
+
+.tasks-table th {
+    background-color: #444;
+}
+
+.tasks-table tr:hover {
+    background-color: #555;
+}
+
+.tasks-table button {
+    padding: 8px 15px;
+    background-color: #d9534f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.tasks-table button:hover {
+    background-color: #c9302c;
+}
+
+/* Сообщение о проверке задания */
+.task-message {
+    color: #5cb85c;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+/* Класс для скрытия элементов */
+.hidden {
+    display: none;
+}
+
+#friends-section {
+    text-align: center;
+    margin-bottom: 60px; /* Нижний отступ для свободного места под меню */
+}
+
+.friends-table {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    border-collapse: collapse;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.friends-table th, .friends-table td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    text-align: center;
+    color: #333;
+}
+
+.friends-table th {
+    background-color: #ff0000;
+    color: white;
+    font-size: 18px;
+}
+
+.friends-table td {
+    background-color: white;
+    font-size: 16px;
+}
+
+.invite-friends {
+    margin-top: 20px;
+}
+
+.invite-button {
+    background-color: #ff0000;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.invite-button:hover {
+    background-color: #cc0000;
+}
+.friends-h2 {
+    margin-bottom: 1em;
 }

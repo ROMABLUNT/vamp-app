@@ -109,3 +109,33 @@ window.onload = function() {
 window.onbeforeunload = function() {
     localStorage.setItem('tokenCount', tokenCount);
 };
+
+function checkTask(taskId) {
+    const taskMessage = document.getElementById('task-message');
+
+    switch(taskId) {
+        case 'task1':
+            // Логика проверки выполнения задания "Complete 5 clicks"
+            taskMessage.textContent = 'Task "Complete 5 clicks" is completed!';
+            break;
+        case 'task2':
+            // Логика проверки выполнения задания "Invite a friend"
+            taskMessage.textContent = 'Task "Invite a friend" is completed!';
+            break;
+        case 'task3':
+            // Логика проверки выполнения задания "Play for 5 minutes"
+            taskMessage.textContent = 'Task "Play for 5 minutes" is completed!';
+            break;
+        default:
+            taskMessage.textContent = 'Task not recognized.';
+    }
+
+    // Сообщение исчезает через 3 секунды
+    setTimeout(() => {
+        taskMessage.textContent = '';
+    }, 3000);
+}
+function inviteFriends() {
+    alert("Пригласить друзей через Telegram!");
+    // Логика для приглашения друзей через Telegram API или другой способ
+}
