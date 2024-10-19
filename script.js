@@ -1,55 +1,49 @@
-// Переменные для хранения данных
-let tokenCount = 0;  // Общее количество монет
-const tokenDisplay = document.getElementById('token-count');  // Элемент для отображения монет
+let tokenCount = 0; 
+const tokenDisplay = document.getElementById('token-count'); 
 
-// Функция для обновления отображаемого количества монет
 function updateTokenDisplay() {
     tokenDisplay.textContent = tokenCount;
 }
 
-// Анимация прыжка (bounce) для вампира
 function animateVamp() {
     const vampImg = document.querySelector('.vamp-img');
     vampImg.classList.add('animate');
     setTimeout(() => vampImg.classList.remove('animate'), 1000);
 }
 
-// Функция клика по кнопке X
 function playX() {
     if (!document.getElementById('play-button-x').classList.contains('disabled')) {
-        tokenCount += 1;  // Добавляем 1 монету
-        updateTokenDisplay();  // Обновляем отображение монет
-        animateVamp();  // Анимация вампира
-        disableButton('play-button-x', 3000);  // Блокируем кнопку на 3 секунды
+        tokenCount += 1; 
+        updateTokenDisplay(); 
+        animateVamp();
+        disableButton('play-button-x', 3000); 
     }
 }
 
-// Функция клика по кнопке Y
 function playY() {
     if (!document.getElementById('play-button-y').classList.contains('disabled')) {
-        tokenCount += 5;  // Добавляем 5 монет
-        updateTokenDisplay();  // Обновляем отображение монет
-        animateVamp();  // Анимация вампира
-        disableButton('play-button-y', 5000);  // Блокируем кнопку на 5 секунд
+        tokenCount += 5;  
+        updateTokenDisplay(); 
+        animateVamp(); 
+        disableButton('play-button-y', 5000); 
     }
 }
 
 // Функция клика по кнопке Z
 function playZ() {
     if (!document.getElementById('play-button-z').classList.contains('disabled')) {
-        tokenCount += 10;  // Добавляем 10 монет
-        updateTokenDisplay();  // Обновляем отображение монет
-        animateVamp();  // Анимация вампира
-        disableButton('play-button-z', 8000);  // Блокируем кнопку на 8 секунд
+        tokenCount += 10; 
+        updateTokenDisplay();
+        animateVamp(); 
+        disableButton('play-button-z', 8000); 
     }
 }
 
-// Функция для блокировки кнопки на определённое время
 function disableButton(buttonId, timeout) {
     const button = document.getElementById(buttonId);
     button.classList.add('disabled');
 
-    let remainingTime = timeout / 1000; // Секунды
+    let remainingTime = timeout / 1000;
     const timerText = button.querySelector('p');
     timerText.style.display = 'block';
     timerText.textContent = remainingTime;
@@ -66,7 +60,6 @@ function disableButton(buttonId, timeout) {
     }, 1000);
 }
 
-// Очистка LocalStorage (для сброса прогресса)
 function clearLocalStorage() {
     localStorage.clear();
     tokenCount = 0;
@@ -75,18 +68,18 @@ function clearLocalStorage() {
 
 // Функции для управления секциями
 function showTasks() {
-    hideAllSections(); // Скрыть все секции
-    document.getElementById('tasks-section').style.display = 'block'; // Показать секцию задач
+    hideAllSections();
+    document.getElementById('tasks-section').style.display = 'block';
 }
 
 function showGame() {
-    hideAllSections(); // Скрыть все секции
-    document.getElementById('game-section').style.display = 'block'; // Показать игровую секцию
+    hideAllSections(); 
+    document.getElementById('game-section').style.display = 'block'; 
 }
 
 function showFriends() {
-    hideAllSections(); // Скрыть все секции
-    document.getElementById('friends-section').style.display = 'block'; // Показать секцию друзей
+    hideAllSections(); 
+    document.getElementById('friends-section').style.display = 'block'; 
 }
 
 // Функция для скрытия всех секций
