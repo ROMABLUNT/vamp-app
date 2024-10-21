@@ -316,3 +316,10 @@ p {
 .friends-h2 {
     margin-bottom: 1em;
 }
+.tasks-h2 {
+    color: white;
+    text-align: center;
+}
+#tasks-section {
+    margin-top: 2em;
+}

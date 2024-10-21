@@ -132,3 +132,14 @@ function inviteFriends() {
     alert("Пригласить друзей через Telegram!");
     // Логика для приглашения друзей через Telegram API или другой способ
 }
+
+function setMainDivHeight() {
+    const mainDiv = document.querySelector('.main-div');
+    mainDiv.style.height = window.innerHeight + 'px';
+}
+
+// Вызываем функцию при загрузке страницы
+window.addEventListener('load', setMainDivHeight);
+
+// Также вызываем при изменении размера окна
+window.addEventListener('resize', setMainDivHeight);
